@@ -1,0 +1,74 @@
+.homepage {
+  background-color: rgba(245, 240, 232, 0.92);
+  /* padding: 3rem 0; */
+}
+
+.section-1 {
+  padding: 160px 3rem 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+.title em {
+  font-style: italic;
+  color: var(--green);
+  font-weight: 400;
+}
+
+.text {
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--taupe);
+  max-width: 420px;
+}
+
+.hero-images {
+  position: relative;
+  height: 500px;
+}
+
+.img1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.img2 {
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
+  width: 45%;
+  height: 55%;
+  object-fit: cover;
+  border: 6px solid var(--cream);
+  border-radius: 0.5rem;
+}
+
+.fwd {
+  position: absolute;
+  top: 1.5rem;
+  left: 1rem;
+  background: var(--ink);
+  color: var(--white);
+  padding: 0.4rem 1rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}

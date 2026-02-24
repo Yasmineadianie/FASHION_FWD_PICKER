@@ -1,0 +1,46 @@
+.cont {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  
+  
+
+  h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+
+}
+
+.form {
+  border: 1px solid;
+  border-radius: 25px 0 25px;
+  box-shadow: 0 0 10px var(--green);
+  &:hover {
+    transition: 0.2s;
+    box-shadow: 0 0 10px var(--green);
+  }
+}
+
+.btn-r {
+  background: none;
+
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+
+  white-space: nowrap;
+  border: 1px solid var(--charcoal);
+  border-radius: 0;
+  padding: 0.4rem 1.1rem;
+  transition: all 0.25s;
+
+  &:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--green);
+  }
+  
+}

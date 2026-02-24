@@ -1,0 +1,73 @@
+
+.modal {
+ background: transparent;
+
+}
+.search-btn {
+   background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+
+  &:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--green);
+  }
+
+}
+
+.footer-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+
+   &:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--green);
+  }
+}
+
+.btn-outline {
+  background: var(--ink);
+  color: white;
+
+  &:hover {
+  background-color: var(--sand);
+  color: var(--white);
+  }
+}
+
+.text {
+ font-family: 'Cormorant Garamond', serif;
+  font-size: 0.5rem;
+  padding-top: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+ 
+}
+
+.modal-title {
+   font-family: 'Playfair Display', serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  white-space: nowrap;
+  margin-left: 0.5rem;
+}

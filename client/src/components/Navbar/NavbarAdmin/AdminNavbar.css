@@ -1,0 +1,55 @@
+.front-page {
+  line-height: 2.5rem;
+  color: var(--charcoal);
+  position: fixed;
+
+  h1 {
+    padding: 1rem;
+  }
+}
+
+.lateral-bar {
+  background-color: var(--cream);
+  padding: 2rem;
+  height: 100dvh;
+  border: 1px solid;
+  box-shadow: 0 2px 6px rgba(68, 94, 47, 0.836);
+  color: var(--accent);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .link {
+    font-family: 'Cormorant Garamond', sans-serif;
+    color: var(--ink);
+    padding-left: 10px;
+    text-decoration: none;
+  }
+
+  .child2 {
+    text-align: right;
+    font-family: 'Cormorant Garamond', sans-serif;
+    color: var(--ink);
+  
+  }
+
+  img {
+    width: 15rem;
+  }
+
+  .logos {
+    padding-inline: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .container-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+ 
+
+}
