@@ -1,0 +1,37 @@
+.b-text {
+  display: inline-block;
+  white-space: nowrap;
+  font-family: "Adelle", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0.2em;
+  padding-right: 4rem;
+  font-weight: 400;
+}
+
+.tract {
+  display: flex;
+  width: max-content;
+  animation: ticker 55s linear infinite;
+}
+
+.text-em {
+  color: var(--green);
+}
+
+.cont-ban {
+  color: #353533;
+  overflow: hidden;
+  padding: 1rem 0;
+  border-top: 1px solid var(--cream);
+  border-bottom: 1px solid var(--cream);
+}
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+  
+}
+

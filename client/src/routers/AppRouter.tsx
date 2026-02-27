@@ -9,9 +9,13 @@ import { PublicRoutes } from "./PublicRoutes";
 import { PrivateRoutes } from "./PrivateRoutes";
 
 
+
+
 // Rutas publicas 
 const HomePage        = lazy(() => import("../pages/publicPages/shop/homePage/HomePage"));
 const DashboardProduct = lazy(() => import("../pages/publicPages/shop/dashboardProduct/DashboardProduct"));
+const BrandGrid = lazy(() => import("../pages/publicPages/shop/BrandGrid/BrandGrid"));
+const OneBrandProduct = lazy(() => import("../pages/publicPages/shop/OneBrandProduct//OneBrandProduct"));
 const SearchPage      = lazy(() => import("../pages/publicPages/shop/searchPage/SearchPage"));
 const LoginPage       = lazy(() => import("../pages/publicPages/auth/LoginPage/LoginPage"));
 const RegisterPage    = lazy(() => import("../pages/publicPages/auth/registerPage/RegisterPage"));
@@ -20,6 +24,7 @@ const RegisterPage    = lazy(() => import("../pages/publicPages/auth/registerPag
 const UserDashboard  = lazy(() => import("../pages/privatesPages/userPage/UserDashboard/UserDashboard"));
 const ProfilePage   = lazy(() => import("../pages/privatesPages/userPage/profilePage/ProfilePage"));
 const WishListPage  = lazy(() => import("../pages/privatesPages/userPage/wishlistPage/WishListPage"));
+const AllUsersPage  = lazy(() => import("../pages/privatesPages/userPage/AllUsersPage/AllUsersPage"));
 
 //  Rutas Admin 
 const AdminDashboard    = lazy(() => import("../pages/privatesPages/adminPage/adminDashboard/AdminDashboard"));
@@ -38,7 +43,13 @@ export const AppRouter = createBrowserRouter([
         index: true, element: <HomePage />
        },
       {
-         path: "product/:id", element: <DashboardProduct />
+         path: "product/allProduct", element: <DashboardProduct />
+         },
+         {
+         path: "brand/:id", element: <OneBrandProduct />
+         },
+          {
+         path: "brand", element: <BrandGrid />
          },
       {
          path: "search", element: <SearchPage /> },
@@ -74,6 +85,9 @@ export const AppRouter = createBrowserRouter([
        },
        {
         path: "wishList", element: <WishListPage />
+       },
+       {
+        path: "allUsers", element: <AllUsersPage />
        }
         ]
       }

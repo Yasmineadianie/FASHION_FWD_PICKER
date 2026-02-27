@@ -2,6 +2,9 @@
 
 import { Pagination } from '@/components/CustumPages/Pagination'
 import './Home.css'
+import BrandGrid from '../BrandGrid/BrandGrid'
+import { Banner } from '@/components/Banner/Banner'
+
 
 
 const HomePage = () => {
@@ -26,12 +29,23 @@ const HomePage = () => {
   </section>
   <section>
     <div>
+      <BrandGrid />
       <Pagination pagesNumber={4}/>
-      
     </div>
   </section>
+  <hr />
 
-
+  <section>
+    <Banner />
+  </section>
+<section>
+    <div>
+      <h3>
+        contact form
+      </h3>
+    </div>
+</section>
+ 
     </div>
   )
 }

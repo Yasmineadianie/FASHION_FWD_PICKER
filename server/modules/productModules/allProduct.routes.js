@@ -11,6 +11,8 @@ routes.get('/allProduct', allProductController.selectAllProduct);
 //ruta para crear productos
 //routes.post('/createProduct', allProductController.createProduct)
 
+//ruta para traer los productos por marcas
+routes.get('/getProducts/:id', allProductController.getOneBrandProduct)
 
 
 export default routes ;

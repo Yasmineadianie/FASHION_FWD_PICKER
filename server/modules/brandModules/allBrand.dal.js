@@ -19,9 +19,6 @@ getAllBrand = async () => {
 
 
 
-
-
-
 }
 
 export default new AllBrandDal();

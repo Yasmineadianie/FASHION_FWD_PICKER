@@ -3,7 +3,9 @@
 
 const AdminProductsPage = () => {
   return (
-    <div>AdminProductsPage</div>
+    <div>AdminProductsPage
+      <h2>hafaf</h2>
+    </div>
   )
 }
 

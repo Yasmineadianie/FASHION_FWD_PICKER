@@ -1,30 +1,21 @@
-import { Footer } from "@/components/Footer/Footer";
-import { NavbarPublic } from "@/components/Navbar/NavbarPublic/NavbarPublic";
-import { NavbarUser } from "@/components/Navbar/NavbarUser/NavbarUser";
-import { Outlet } from "react-router";
 
+import { NavbarPublic } from '@/components/Navbar/NavbarPublic/NavbarPublic';
+import { NavbarUser } from '@/components/Navbar/NavbarUser/NavbarUser';
+import { Outlet } from 'react-router';
 
- const UserLayout = () => {
-
-
+const UserLayout = () => {
   return (
-    <div>
-   <header>
-<NavbarPublic />
-<NavbarUser/>
-   </header>
+    <div className='app-cont'>
 
-<main>
-  
-<Outlet />
-</main>
+        <NavbarPublic />
+        <NavbarUser />
+   
 
-<footer>
-  <Footer />
-</footer>
-
+      <main className='main-cont'>
+        <Outlet />
+      </main>
 
     </div>
-  )
-}
+  );
+};
 export default UserLayout;

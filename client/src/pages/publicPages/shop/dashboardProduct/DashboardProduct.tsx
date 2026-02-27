@@ -1,27 +1,27 @@
-import { log } from "console"
-import { useEffect } from "react"
-
+import { ProductForm } from '@/components/ProductForm/ProductForm';
+import { AuthContext } from '@/context/AuthContext/AuthContext';
+import type { Product } from '@/interfaces/product.interface';
+import { useContext } from 'react';
+import { Container } from 'react-bootstrap';
+import './dashboard.css'
+//import { Pagination } from '@/components/CustumPages/Pagination';
 
 const DashboardProduct = () => {
+  const { product } = useContext(AuthContext);
 
-  const [allProducts, setAllProducts] = useState([])
-
-useEffect(()=> {
-
-  const fetchAllProducts = async () => {
-     try {
-
-      let res = await fetchData('/products/allProducts', 'GET', null, null)
-     }catch(error){
-      console.log(error);
-      
-     }
-  }
-  fetchAllProducts
-},[])
   return (
-    <div>DashboardProduct</div>
-  )
-}
+    <Container className='grid'>
+      {/* <h1>Explore ours Products</h1> */}
+      {product?.map((item: Product) => {
+        return (
+          <div key={item.product_id}>
+            <ProductForm product={item} />
+          </div>
+        );
+      })}
+      {/* <Pagination/> */}
+    </Container>
+  );
+};
 
-export default DashboardProduct
+export default DashboardProduct;

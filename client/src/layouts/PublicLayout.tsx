@@ -4,19 +4,19 @@ import { Outlet } from 'react-router';
 
 const PublicLayout = () => {
   return (
-    <>
-      <header>
+    <div className='app-cont'>
+   
         <NavbarPublic />
-      </header>
+     
 
-      <main>
+      <main className='main-cont'>
         <Outlet />
       </main>
 
       <footer>
         <Footer />
       </footer>
-    </>
+    </div>
   );
 };
 export default PublicLayout;

@@ -8,7 +8,7 @@ export const NavbarUser = () => {
         
           <div className="container-logo">
             <i className="fa-regular fa-house"></i>
-            <Link className='link' to={"/tests"} > HOME</Link>
+            <Link className='link' to={"/"} > HOME</Link>
           </div>
           <div className="container-logo">
             <i className="fa-brands fa-squarespace"></i>
@@ -21,7 +21,7 @@ export const NavbarUser = () => {
 
           <div className="container-logo">
             <i className="fa-regular fa-file-lines"></i>
-            <Link className='link' to={"/admin/Products"}>Products</Link>
+            <Link className='link' to={"/product/allProduct"}>All Products</Link>
           </div>
         </div>
         

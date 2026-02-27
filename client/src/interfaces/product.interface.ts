@@ -1,3 +1,4 @@
+
 import type { User } from './user.interface';
 
 export interface Product {
@@ -7,7 +8,10 @@ export interface Product {
   category: string
   price: number;
   description: string;
-  image_url: string[];
+  image_url: string;
   product_is_deleted: boolean;
   user: User;
+  brand_name: string;
 }
+
+

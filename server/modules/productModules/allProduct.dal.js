@@ -11,7 +11,8 @@ selectAllProduct = async () => {
   }catch(error) {
     throw error;
   }
-
+}
+  
 // createProduct = async (values) => {
 
 //   try {
@@ -23,10 +24,19 @@ selectAllProduct = async () => {
 //   }
 // }
 
+
+getOneBrandProduct = async(values) => {
+
+  try {
+    let sql = "SELECT * FROM product WHERE brand_id = ?";
+    let result = await executeQuery(sql, values)
+    return result;
+  } catch (error) {
+    throw error;
+  }
+
+
 }
-
-
-
 
 
 

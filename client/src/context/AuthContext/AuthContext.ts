@@ -1,4 +1,7 @@
 import { createContext } from "react";
-import {type ContextProviderProps } from "./AuthContextProvider";
+import type { ContextProviderProps } from "./AuthContextProvider";
 
-export const AuthContext = createContext <ContextProviderProps |undefined >(undefined)
+export const AuthContext = createContext <ContextProviderProps>({
+  user: null,
+  setUser: () => {}  
+})

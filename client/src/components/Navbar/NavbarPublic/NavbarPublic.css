@@ -39,6 +39,12 @@
   background: var(--ink);
 }
 
+p {
+  font-family: 'Playfair Display', serif;
+  color: var(--green);
+  font-size: 1rem;
+}
+
 .split {
   width: 1px;
   height: 18px;

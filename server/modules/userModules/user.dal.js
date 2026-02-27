@@ -44,6 +44,27 @@ finUserEmail= async(email) => {
   }
 }
 
+
+
+userByToken = async (id) => {
+
+  try{
+    let sql = "SELECT  user_id, email, name, lastname, avatar, phone_number, type FROM user WHERE user_id= ? AND user_is_deleted = 0"
+    let result = await executeQuery(sql, [id])
+      return result
+  }catch(error){
+    throw error;
+  }
+}
+
+
+
+
+
+
+
+
+
 }
 
 

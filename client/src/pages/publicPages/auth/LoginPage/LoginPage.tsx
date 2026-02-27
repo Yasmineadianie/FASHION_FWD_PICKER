@@ -2,8 +2,10 @@ import Form from 'react-bootstrap/Form';
 import './Loginpage.css'
 import { useNavigate } from 'react-router';
 import type { LoginForm } from '@/interfaces/user.interface';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { fetchData } from '@/helpers/axiosHelpers';
+import { AuthContext } from '@/context/AuthContext/AuthContext';
+
 
 
 const initialValue: LoginForm = {
@@ -13,10 +15,12 @@ const initialValue: LoginForm = {
 
 const LoginPage = () => {
 
-  const [login, setLogin] = useState<LoginForm>(initialValue)
+  const [login, setLogin] = useState<LoginForm>(initialValue);
+  const [errorMsg, setErroMsg] = useState<string>("")
 
 const navigate = useNavigate();
-  
+const {setUserData, setToken} = useContext(AuthContext);
+
  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setLogin({ ...login, [name]: value });
@@ -24,19 +28,26 @@ const navigate = useNavigate();
 
 
 const onSubmit = async () => {
-
   try {
+    // Fetch para mandar el input del usuario a autenticación
+    const res = await fetchData('/user/login', 'POST', login);
+    const token = res.data.token;
 
-  const res =  await fetchData('/user/login', "POST", login);
-  console.log('ressss', res);
-  
+    //peticion para traer datos de 1usuario logueado
+    const resUser = await fetchData('/user/userByToken', 'GET', null, token);
 
-  }catch(error) {
+    //guardamos el token en el localstorage
+    localStorage.setItem('token', token);
+
+    console.log('ressss', resUser);
+    setUserData(resUser.data.user);
+    setToken(token);
+
+  } catch (error:any) {
     console.log(error);
-    
+    setErroMsg(error.response.data.message);
   }
-
-}
+};
 
 
 
@@ -76,7 +87,7 @@ const onSubmit = async () => {
         />
        
       </Form.Group>
-
+        <p className='error-msg fs-6'>{errorMsg}</p>
       <Form.Group className='gap-4 d-flex justify-content-center py-4 mb-3'>
 
        <button type='button' onClick={()=> navigate(-1)} className='btn-r bg-black text-light'>Cancel</button>

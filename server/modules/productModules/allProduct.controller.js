@@ -14,7 +14,18 @@ class AllProductController {
   };
 
 
+getOneBrandProduct = async (req, res) => {
 
+  const {id} = req.params;
+  const values = [id]
+  try {
+    let result = await productDal.getOneBrandProduct(values)
+    console.log('result:', result);
+     res.status(200).json({message: 'los productos', result})
+  } catch (error) {
+    res.status(500).json('error')
+  }
+}
 
 
 

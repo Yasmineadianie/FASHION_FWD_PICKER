@@ -7,7 +7,7 @@ export const fetchData = async (
   url: string,
   method: Method,
   data: unknown = null,
-  token: String | null = null,
+  token: string | null = null,
 ) => {
 
   let headers = {};

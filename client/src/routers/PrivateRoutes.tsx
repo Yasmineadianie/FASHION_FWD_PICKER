@@ -8,21 +8,20 @@ interface Props {
 
 export const PrivateRoutes = ({ requiredType}: Props) => {
  
-  const {user} = useContext(AuthContext);
+  const {userData} = useContext(AuthContext);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-      const userType = user?.type;
-    if(user === null)  navigate ("/login" );
-      if (userType !== requiredType) navigate('/', {replace: true})
   
-console.log(userType);
+    
+    if (userData?.type !== requiredType) navigate('/')
+  
 
-  },[user, requiredType])
+  },[userData])
 
 
-console.log(user);
+console.log(userData);
 
 
   return (
