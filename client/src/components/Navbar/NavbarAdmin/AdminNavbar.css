@@ -1,7 +1,12 @@
 .front-page {
-  line-height: 2.5rem;
+  line-height: 2rem;
   color: var(--charcoal);
   position: fixed;
+  top: 72px;
+  left: 0;
+  width: 300px;
+  z-index: 50;
+
 
   h1 {
     padding: 1rem;
@@ -26,10 +31,10 @@
   }
 
   .child2 {
-    text-align: right;
+    text-align: left;
     font-family: 'Cormorant Garamond', sans-serif;
     color: var(--ink);
-  padding: 3rem;
+  padding: 1rem;
   }
 
   

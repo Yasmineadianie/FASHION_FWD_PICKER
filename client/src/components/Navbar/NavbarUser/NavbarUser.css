@@ -2,6 +2,10 @@
   line-height: 2.5rem;
   color: var(--charcoal);
   position: fixed;
+   top: 72px;
+  left: 0;
+  width: 300px;
+  z-index: 50;
 
   h1 {
     padding: 1rem;
@@ -30,7 +34,7 @@
     text-align: right;
     font-family: 'Cormorant Garamond', sans-serif;
     color: var(--ink);
-    /* padding: 2rem; */
+    padding: 1rem;
   
   }
 

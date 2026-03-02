@@ -1,68 +1,63 @@
-import { AuthContext } from "@/context/AuthContext/AuthContext"
-import { useContext } from "react"
-import { Col, Container, Row } from "react-bootstrap"
-//import { useNavigate } from "react-router";
-
-
-
+import { AuthContext } from '@/context/AuthContext/AuthContext';
+import { useContext } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router';
 
 const ProfilePage = () => {
-const {userData} = useContext(AuthContext);
-//const navigate = useNavigate();
+  const { userData } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   return (
-     <>
-    <section>
+    <>
+      <section>
         <Container>
-            <Row>
-                <Col>
-                    <h2>Tu perfil</h2>
-                    <hr /> 
-                    <p>Nombre: {userData?.name}</p>
-                    <p>Apellidos: {userData?.lastname}</p>
-                    <p>Email: {userData?.email}</p>
-                    <p>Teléfono: {userData?.phone_number}</p>
-                        
-                </Col>
-                <Col>
-                    <img className='image-profile' src={`${import.meta.env.VITE_SERVER_IMAGES}/userDatas/${userData?.avatar}`} alt="" />
-                </Col>
-            </Row>
-            <Row>
-                <Col xs={3}>
-                    <div className='d-flex flex-column gap-2'>
-                        {/* <Button onClick={()=>navigate('/edituserData')}>Editar</Button>
-                        <Button>Eliminar</Button> */}
-                    </div>
-                </Col>
-            </Row>
-        </Container>
-    </section>
-    <section>
-        <Container>
-            <Row className='mt-5 mb-5 d-flex justify-content-center'>
-                <Col xl={4}>
-                    {/* {!showFormNewTravel ? 
-                        <Button onClick={()=>setShowFormNewTravel(true)}>Añadir viaje</Button>
-                        :
-                        <FormNewTravel setShowFormNewTravel={setShowFormNewTravel}/>
-                    } */}
-                </Col>
-            </Row>
-            <Row>
+          <Row>
+            <Col>
+               <p style={{ color: 'goldenrod', fontWeight: 'bold' }}>
+                  Your Account
+                </p>
+              <hr />
+              <p>Name: {userData?.name}</p>
+              <p>Last Name: {userData?.lastname}</p>
+              <p>Email: {userData?.email}</p>
+              <p>Tel: {userData?.phone_number}</p>
 
+              {userData?.type === 1 && (
+                <Row className="mt-3">
+                  <Col>
+                    <button
+                      onClick={() => navigate('/user/wishList')}
+                      className="btn btn-dark"
+                    >
+                      User wishList
+                    </button>
+                  </Col>
+                </Row>
+              )}
+
+              {userData?.type === 2 && (
+                <p style={{ color: 'goldenrod', fontWeight: 'bold' }}>
+                  Admin Account
+                </p>
+              )}
+            </Col>
+          </Row>
+
+          {userData?.type === 2 && (
+            <Row className="mt-3">
+              <Col>
+                <button
+                  onClick={() => navigate('/admin')}
+                  className="btn btn-dark"
+                >
+                  Admin Dashboard
+                </button>
+              </Col>
             </Row>
+          )}
         </Container>
-        <Container>
-            <Row>
-                <Col>
-                    {/* <userDataTravelsGallery /> */}
-                </Col>
-            </Row>
-        </Container>
-    </section>
+      </section>
     </>
-  )
-}
-
-export default ProfilePage
+  );
+};
+export default ProfilePage;

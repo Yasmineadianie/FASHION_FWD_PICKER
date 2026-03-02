@@ -5,6 +5,7 @@ import type { User } from '@/interfaces/user.interface';
 import type { Product } from '@/interfaces/product.interface';
 import type { Brand } from '@/interfaces/brand.interface';
 
+
 export interface ContextProviderProps {
   userData: User | null;
   setUserData: React.Dispatch<React.SetStateAction<User | null>>;
@@ -24,8 +25,9 @@ export const AuthContextProvider = ({ children }: PropsWithChildren) => {
   const [token, setToken] = useState<string | null>(null);
   const [product, setProduct] = useState<Product[] | null>(null);
   const [brand, setBrand] = useState<Brand[] | null>(null);
-  //permete a react no actualiza estado si el componente no existe
+  //permite a react no actualiza estado si el componente no existe
     const [reset, setReset] = useState<boolean>(false);
+
 
   useEffect(() => {
     const checkTokenLS = localStorage.getItem('token');
@@ -84,6 +86,7 @@ fetchBrand();
     setUserData(null);
     setToken(null);
     localStorage.removeItem('token');
+   
   };
 
   return (

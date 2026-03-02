@@ -30,12 +30,10 @@ const RegisterPage = () => {
       registerSchema.parse(register);
 
       //mandar los datos al back
-      const res = await fetchData('/user/register', "POST", register);
-      console.log('mmmm',res);
-      
-     navigate('/login')
+      const res = await fetchData('/user/register', 'POST', register);
+      console.log('mmmm', res);
 
-
+      navigate('/login');
     } catch (error) {
       if (error instanceof ZodError) {
         //objeto para guardar los erores
@@ -48,7 +46,7 @@ const RegisterPage = () => {
 
         setValErrors(fieldsErrors);
       } else {
-        setValErrors({})
+        setValErrors({});
         console.log('otro error');
       }
     }
@@ -78,9 +76,9 @@ const RegisterPage = () => {
           {valErrors?.name && (
             <p className="error-msg fs-6">{valErrors.name}</p>
           )}
-         </Form.Group>
-          <Form.Group className=" p-1">
-            <Form.Label>LastName</Form.Label>
+        </Form.Group>
+        <Form.Group className=" p-1">
+          <Form.Label>LastName</Form.Label>
 
           <Form.Control
             type="text"
@@ -93,10 +91,10 @@ const RegisterPage = () => {
           {valErrors?.lastname && (
             <p className="error-msg fs-6">{valErrors.lastname}</p>
           )}
-          </Form.Group>
+        </Form.Group>
 
-         <Form.Group className=" p-1">
-           <Form.Label>Email</Form.Label>
+        <Form.Group className=" p-1">
+          <Form.Label>Email</Form.Label>
 
           <Form.Control
             type="email"
@@ -104,14 +102,13 @@ const RegisterPage = () => {
             name="email"
             value={register.email}
             onChange={handleChange}
-            
           />
           {valErrors?.email && (
             <p className="error-msg fs-6">{valErrors.email}</p>
           )}
-         </Form.Group>
+        </Form.Group>
 
-         <Form.Group className=" p-1">
+        <Form.Group className=" p-1">
           <Form.Label>Password</Form.Label>
 
           <Form.Control

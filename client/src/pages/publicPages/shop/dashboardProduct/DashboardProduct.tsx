@@ -11,7 +11,7 @@ const DashboardProduct = () => {
 
   return (
     <Container className='grid'>
-      {/* <h1>Explore ours Products</h1> */}
+      <h1 className='text-center'>Explore ours Products</h1>
       {product?.map((item: Product) => {
         return (
           <div key={item.product_id}>

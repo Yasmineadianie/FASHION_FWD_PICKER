@@ -11,6 +11,7 @@ import { PrivateRoutes } from "./PrivateRoutes";
 
 
 
+
 // Rutas publicas 
 const HomePage        = lazy(() => import("../pages/publicPages/shop/homePage/HomePage"));
 const DashboardProduct = lazy(() => import("../pages/publicPages/shop/dashboardProduct/DashboardProduct"));
@@ -30,7 +31,7 @@ const AllUsersPage  = lazy(() => import("../pages/privatesPages/userPage/AllUser
 const AdminDashboard    = lazy(() => import("../pages/privatesPages/adminPage/adminDashboard/AdminDashboard"));
 const AdminProductsPage = lazy(() => import("../pages/privatesPages/adminPage/Products/AdminProductsPage"));
 const EditProduct       = lazy(() => import("../pages/privatesPages/adminPage/EditProduct/EditProduct"));
-const CreateProduct     = lazy(() => import("../pages/privatesPages/adminPage/CreateProduct/CreateProduct"));
+const CreateProduct    = lazy(() => import("../pages/privatesPages/adminPage/CreateProduct/CreateProduct"));
 
 export const AppRouter = createBrowserRouter([
 
@@ -44,6 +45,9 @@ export const AppRouter = createBrowserRouter([
        },
       {
          path: "product/allProduct", element: <DashboardProduct />
+         },
+         {
+         path: "product/:id", element: <DashboardProduct />
          },
          {
          path: "brand/:id", element: <OneBrandProduct />
@@ -86,9 +90,7 @@ export const AppRouter = createBrowserRouter([
        {
         path: "wishList", element: <WishListPage />
        },
-       {
-        path: "allUsers", element: <AllUsersPage />
-       }
+       
         ]
       }
       
@@ -110,12 +112,18 @@ export const AppRouter = createBrowserRouter([
       {
         path: 'products', element: < AdminProductsPage/> 
       },
+       {
+    path: "profile", element: <ProfilePage />,
+       },
       {
     path: "editProduct/:id", element: <EditProduct/>,
       },
        {
     path: "createProduct", element: <CreateProduct />,
        },
+       {
+        path: "allUsers", element: <AllUsersPage />
+       }
     ]
      }
     ]

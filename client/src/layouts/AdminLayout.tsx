@@ -14,7 +14,7 @@ const AdminLayout = () => {
        <NavbarAdmin />
      </div>
 
-      <main className="main-cont">
+      <main className="main-cont" >
         <Outlet />
       </main>
       

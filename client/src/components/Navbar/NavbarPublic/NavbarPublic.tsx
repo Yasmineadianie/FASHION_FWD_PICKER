@@ -9,9 +9,16 @@ export const NavbarPublic = () => {
 
   const {token, logout, userData} =useContext(AuthContext);
 
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  }
+
   const isLogin = Boolean(token)
 
   const navigate = useNavigate();
+
+  
   return (
     <Nav className="navbar">
       <div className="navbar-brand" onClick={()=> navigate('')}>
@@ -32,12 +39,14 @@ export const NavbarPublic = () => {
         <div className='d-flex gap-4'>
           
           <div className='d-flex gap-2'>
-            <p onClick={()=> navigate('/user/profile')}> Hello {userData?.name}</p>
+            <p onClick={() => navigate(userData?.type === 2 ? '/admin/profile' : '/user/profile')}> Hello {userData?.name}</p>
+         
+     
             <p>{userData?.avatar}</p>
          
           </div>
-          <button onClick={logout} className="nabvar-btn navbar-btn-outline" >Logout</button>
-          <button className="nabvar-btn"><i className="fa-solid fa-heart"></i></button>
+          <button onClick={handleLogout} className="nabvar-btn navbar-btn-outline" >Logout</button>
+          <button className="nabvar-btn" onClick={()=> navigate('/user/wishlist')}><i className="fa-solid fa-heart"></i></button>
         </div>)}
       </div>
     </Nav>

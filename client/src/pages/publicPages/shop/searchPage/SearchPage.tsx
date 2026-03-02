@@ -1,8 +1,11 @@
+import { SearchModal } from "@/components/Navbar/SearchModal/SearchModal"
 
 
 const SearchPage = () => {
   return (
-    <div>SearchPage</div>
+    <div>
+      <SearchModal />
+    </div>
   )
 }
 

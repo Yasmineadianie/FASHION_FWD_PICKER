@@ -1,3 +1,4 @@
+import { connect } from 'http2';
 import executeQuery, {dbPool} from '../../config/database.js'
 class ProductDal {
 
@@ -13,16 +14,25 @@ selectAllProduct = async () => {
   }
 }
   
-// createProduct = async (values) => {
+createProduct = async (data) => {
 
-//   try {
-//     const values = {}
-//     let sql = 
+  const {category,  brand_id, image_url, product_name, description, price} = data;
 
-//   }catch(error) {
-//     throw error;
-//   }
-// }
+  try {
+  
+    let sql = "INSERT INTO product (category,  brand_id, image_url, product_name, description, price) VALUES(?,?,?,?,?,?)";
+
+    let values = [category,  brand_id, image_url, product_name, description, price]
+    let result = await executeQuery( sql, values);
+    console.log(result);
+            return result
+
+  }catch(error) {
+    throw error;
+  }
+  }
+
+
 
 
 getOneBrandProduct = async(values) => {
@@ -38,24 +48,36 @@ getOneBrandProduct = async(values) => {
 
 }
 
+editProduct = async(values) => {
+
+  try {
+    let sql = "UPDATE product SET price = ?, description = ? WHERE product_id = ?";
+    let result = await executeQuery(sql, values)
+    return result;
+  } catch (error) {
+    throw error;
+  }
+}
 
 
 
+delLogicProduct = async (id) => {
 
+  try {
 
-
-
-
-
-
-
-
-
+    let sql = "UPDATE product SET product_is_deleted = 1 WHERE product_id = ?"
+    let result = await executeQuery(sql, [id]);
+    return result;
+    
+  } catch (error) {
+    throw error;
+  }
 
 }
 
 
 
+}
 
 
 

@@ -1,9 +1,13 @@
+import {CreateProductForm} from "@/components/createProductForm/CreateProductForm"
 
 
 
 const CreateProduct = () => {
+
   return (
-    <div>CreateProduct</div>
+< div className="py-5">
+ <CreateProductForm/>
+</div>
   )
 }
 

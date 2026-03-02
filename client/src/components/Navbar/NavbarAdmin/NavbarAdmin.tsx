@@ -20,12 +20,12 @@ export const NavbarAdmin = () => {
           </div>
           <div className="container-logo">
             <i className="fa-solid fa-business-time"></i>
-            <Link className='link' to={"/allUsers"}>Users Registered</Link>
+            <Link className='link' to={"/admin/allUsers"}>Users Registered</Link>
           </div>
 
           <div className="container-logo">
             <i className="fa-regular fa-file-lines"></i>
-            <Link className='link' to={"/admin/Products"}>Products</Link>
+            <Link className='link' to={"/admin/products"}>Products</Link>
           </div>
         </div>
         

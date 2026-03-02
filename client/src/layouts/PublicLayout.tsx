@@ -1,6 +1,7 @@
-import { Footer } from '@/components/Footer/Footer';
+//import { Footer } from '@/components/Footer/Footer';
 import { NavbarPublic } from '@/components/Navbar/NavbarPublic/NavbarPublic';
 import { Outlet } from 'react-router';
+import './layout.css'
 
 const PublicLayout = () => {
   return (
@@ -14,7 +15,7 @@ const PublicLayout = () => {
       </main>
 
       <footer>
-        <Footer />
+      
       </footer>
     </div>
   );

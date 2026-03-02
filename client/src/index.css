@@ -37,4 +37,6 @@ body {
 
 .main-cont {
   flex: 1;
+  padding-top: 78px;
+ 
 }
