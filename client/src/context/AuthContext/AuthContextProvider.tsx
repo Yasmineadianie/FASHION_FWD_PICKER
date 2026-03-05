@@ -13,8 +13,10 @@ export interface ContextProviderProps {
   setToken: React.Dispatch<React.SetStateAction<string | null>>;
   logout: () => void;
   product: Product[] | null;
+  wishlist:Product[] ;
   brand: Brand[] | null;
   setProduct:React.Dispatch<React.SetStateAction<Product[] | null>>
+  setWishlist:React.Dispatch<React.SetStateAction<Product[] >>
   reset: boolean;
   setReset: React.Dispatch<React.SetStateAction<boolean>>
   
@@ -27,6 +29,7 @@ export const AuthContextProvider = ({ children }: PropsWithChildren) => {
   const [brand, setBrand] = useState<Brand[] | null>(null);
   //permite a react no actualiza estado si el componente no existe
     const [reset, setReset] = useState<boolean>(false);
+    const [wishlist, setWishlist] = useState<Product[] >([])
 
 
   useEffect(() => {
@@ -69,9 +72,9 @@ const fetchBrand = async ()=> {
 
   try {
 
-    let result  = await fetchData('/brand/allBrand', "GET", null, null);
+    const result  = await fetchData('/brand/allBrand', "GET", null, null);
       setBrand(result.data.result);
-      console.log(setBrand);
+      console.log(result.data.result);
       
   } catch (error) {
     console.log(error);
@@ -101,7 +104,9 @@ fetchBrand();
           brand,
           setProduct,
           reset,
-         setReset
+         setReset,
+         wishlist,
+         setWishlist
         }}
     >
       {children}

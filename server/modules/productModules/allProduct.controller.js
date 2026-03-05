@@ -68,10 +68,10 @@ try {
 
 
 delLogicProduct = async (req, res) => {
- const {product_id} = req.params;
+ const {id} = req.params;
 
   try {
-    let result = await productDal.delLogicProduct(product_id);
+    let result = await productDal.delLogicProduct(id);
     res.status(200).json({message: 'borrado ok', result});
     
   } catch (error) {

@@ -3,11 +3,11 @@ import executeQuery, {dbPool} from '../../config/database.js';
 
 class WishistDal {
 
-getWishlist = async () => {
+getWishlist = async (values) => {
 
   try {
-    let sql = 'SELECT * FROM wishlist' ;
-     let result = await executeQuery(sql);
+    let sql = 'INSERT INTO wishlist (user_id, product_id) VALUES (?,?)' ;
+     let result = await executeQuery(sql,values);
      return result;
   }catch(error) {
     throw error;
